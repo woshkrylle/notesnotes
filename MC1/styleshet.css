@@ -38,6 +38,7 @@ a{
 }
 
 .sidepanel{
+    display: flex;
     flex-direction: column;
     width: 30%;
     border: #a7a7a7;
@@ -65,12 +66,65 @@ a{
     text-align: justify;
 }
 
+.smile{
+    display: inline-flex;
+    background-image: url(images/spritesheet.png);
+    background-size: 96px 64px;
+    background-position: 0px 0px;
+    width: 32px;
+    height: 32px;
+    
+}
+.smile:hover{
+    display: inline-flex;
+    background-image: url(images/spritesheet.png);
+    background-size: 96px 64px;
+    background-position: 0px 32px;
+    width: 32px;
+    height: 32px;
+    
+}
+.book{
+    display: inline-flex;
+    background-image: url(images/spritesheet.png);
+    background-size: 96px 64px;
+    background-position: 32px 0px;
+    width: 32px;
+    height: 32px;
+    
+}
+.book:hover{
+    display: inline-flex;
+    background-image: url(images/spritesheet.png);
+    background-size: 96px 64px;
+    background-position: 32px 32px;
+    width: 32px;
+    height: 32px;
+    
+}
+.share{
+    display: inline-flex;
+    background-image: url(images/spritesheet.png);
+    background-size: 96px 64px;
+    background-position:64px 0px;
+    width: 32px;
+    height: 32px;
+    
+}
+.share:hover{
+    display: inline-flex;
+    background-image: url(images/spritesheet.png);
+    background-size: 96px 64px;
+    background-position: 64px 32px;
+    width: 32px;
+    height: 32px;
+    
+}
 
 .commentpanel{
     font-size: 1rem;
     font-weight: lighter;
     color: #535353;
     justify-content: center;
-    background-color: #f8f8f8
-    ;
+    background-color: #f8f8f8;
 }
