@@ -6,38 +6,36 @@ const Card = function (front, back, date) {
 
 let cards = [];
 let cardCtr = 0;
-let errorFront = "Please fill out the front.";
-let errorBack = "Please fill out the back.";
-let errorBoth = "Must fill out all fields!";
+let errorFront = " Please fill out the front ";
+let errorBack = " Please fill out the back ";
+let errorBoth = " Must fill out all fields! ";
 
 document.addEventListener("DOMContentLoaded", function () {
   let today = new Date();
   document.querySelector(".dateAdded").value = today;
-  document.querySelector("#add-card-btn").addEventListener("click", function (e) {
-    e.preventDefault();
+  document
+    .getElementById("input#add-card-btn")
+    .addEventListener("click", function (e) {
+      e.preventDefault();
 
-    let front = document.querySelector("#front-card-field").value;
-    let back = document.querySelector("#back-card-field").value;
-    let date = today;
+      let front = document.querySelector("textarea#front-card-field").value;
+      let back = document.querySelector("textarea#back-card-field").value;
+      let date = today;
 
-    if (validateFields(front, back)) {
-      if (cardCtr === 0) {
-        clearCards();
+      if (validateFields(front, back)) {
+        if (cardCtr === 0) {
+          document.querySelector("div#cardlist-div").textContent = "";
+        }
+        cardCtr = cardCtr + 1;
+        let card = new Card(front, back, date);
+        cards.push(card);
+
+        refreshDisplay(cards);
+        resetCreateCard();
       }
-      cardCtr = cardCtr + 1;
-      let card = new Card(front, back, date);
-      cards.push(card);
-
-      refreshDisplay(cards);
-      resetCreateCard();
-    }
-  });
+    });
 
   function validateFields(front, back) {
-    if (front === "" && back === "") {
-      showError(errorBoth);
-      return false;
-    }
     if (front === "") {
       showError(errorFront);
       return false;
@@ -46,16 +44,20 @@ document.addEventListener("DOMContentLoaded", function () {
       showError(errorBack);
       return false;
     }
+    if (front === "" && back === "") {
+      showError(errorBoth);
+      return false;
+    }
     return true;
   }
 
   function clearCards() {
-    document.querySelector("#cardlist-div").innerText = "";
+    document.querySelector("div#cardlist-div").innerText = "";
   }
 
   function displayCard(newCard) {
-    const cardHTML =
-      "<div class='flashcard' style='background-color: rgb(186, 254, 209);'>" +
+    const Card =
+      "<div id='card1' class='flashcard' style='background-color: rgb(186, 254, 209);'>" +
       "<div class='flashcard-text'>" +
       "<p class='card-text front'>" +
       newCard.front +
@@ -72,19 +74,19 @@ document.addEventListener("DOMContentLoaded", function () {
       "<span class='card-side-label' hidden> Back </span>" +
       "</div>" +
       "</div>";
-    
-    document.querySelector("#cardlist-div").insertAdjacentHTML("beforeend", cardHTML);
   }
 
   function displayEmptyCards() {
-    document.querySelector("#cardlist-div").innerHTML = "<p>No cards added yet.</p>";
+    document.querySelector("div#cardlist-div").innerHTML = (
+      <p> Input cards pls </p>
+    );
   }
 
   function displayCards(newCards) {
     clearCards();
-    newCards.forEach(card => {
-      displayCard(card);
-    });
+    for (i = 0; i < newCards.length; i++) {
+      displayCard(newCards[i]);
+    }
   }
 
   function refreshDisplay(cards) {
@@ -96,11 +98,14 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function resetCreateCard() {
-    document.querySelector("#front-card-field").value = "";
-    document.querySelector("#back-card-field").value = "";
+    document.querySelector("textarea#front-card-field").value = "";
+    document.querySelector("textarea#back-card-field").value = "";
+    let today = new Date();
   }
 
-  function showError(errorText) {
-    document.querySelector("#form-error-msg").textContent = errorText;
+  function showError(errorText){
+    document.querySelector("#form-error-msg").innerHTML = errorText;
   }
+
+
 });
