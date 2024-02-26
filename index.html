@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Flashcard App </title>
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/index.css" />
+        <script src="js/color-field-styler.js" defer> </script>
+        <!-- Script to Edit -->
+        <script src="js/index.js" defer></script>
+    </head>
+    <body>
+        <div id="main-content-div">
+            <div id="form-div">
+                <form id="flashcard-form" name="flashcardForm">                
+                    <div id="colorfield-container">
+                        <label for="card-color"> Set Card Color: </label>
+                        <input id="card-color" value='#ffffff' name="card-color" type="color">
+                    </div>
+                    <div id="textarea-container">
+                        <textarea id="front-card-field" name="frontCardField" placeholder="Enter Text for the Front of the Card"></textarea>
+                        <textarea id="back-card-field" name="backCardField" placeholder="Enter Text for the Back of the Card"></textarea>
+                    </div>
+                    <div id="bottom-form-container">
+                        <p id="form-error-msg"></p>
+                        <input type="button" id="add-card-btn" value="Add Card"/>
+                    </div>
+                </form>
+            </div>
+
+            <div id="cardlist-div">
+                <!--Example Flashcard Reference. Remove this example before submission.-->
+            </div>
+        </div>
+    </body>
+</html>

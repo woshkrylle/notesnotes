@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+}
+
+body {
+    margin: 0px;
+}
+
+#main-content-div {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+#form-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    background-color: rgb(237, 237, 237);
+    box-sizing: border-box;
+    border: 1px solid rgb(1, 51, 69);
+    border-radius: 6px;
+    padding: 15px;
+    width: 90%;
+}
+
+#colorfield-container {
+    margin-bottom: 1rem;
+}
+
+#colorfield-container label {
+    font-weight: bolder;
+}
+
+#card-color {
+    height: 2rem;
+    width: 2rem;
+}
+
+#flashcard-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    justify-content: space-between;
+}
+
+#textarea-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+
+#textarea-container textarea {
+    resize: vertical;
+    width: 48%;
+    background-color: white;
+    border-radius: 2px;
+
+    font-family: "Open Sans", sans-serif;
+    font-size: 1rem;
+    text-align: center;
+}
+
+#add-card-btn {
+    font-family: "Open Sans", sans-serif;
+    font-weight: bolder;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 10rem;
+    height: 2rem;
+}
+
+#add-card-btn:hover {
+    font-family: "Open Sans", sans-serif;
+    background-color: rgb(1, 51, 69);
+    border: 1px solid black;
+}
+
+#add-card-btn:active {
+    background-color: rgb(44, 95, 114);
+    padding-top: 4px;
+}
+
+#bottom-form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    margin-top: 0.5rem;
+}
+
+#form-error-msg {
+    margin: 0px;
+    margin-bottom: 0.5rem;
+    color: red;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+#cardlist-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 5rem;
+    width: 80%;
+}
+
+.flashcard {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    min-height: 10rem;
+    width: 38rem;
+    
+    padding: 1rem;
+
+    margin-bottom: 2rem;
+
+    border-radius: 4px;
+    box-shadow: 0px 4px 10px rgba(179, 179, 179, 0.3);
+}
+
+.flashcard:hover {
+    outline: 1px solid orange;
+}
+
+.flashcard:active {
+    outline: 1px solid rgb(255, 0, 0);
+}
+
+.flashcard-text {    
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    max-width: 100%;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.flashcard .card-text {
+    margin: 0px;
+    font-size: 1.5rem;
+    text-align: center;
+    max-height: 100%;
+    max-width: 100%;
+    word-break: break-all;
+}
+
+.card-bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px;
+    margin-top: 0.4rem;
+}
+
+.card-date-label {
+    font-size: 0.8rem;
+    margin: 0px;
+    margin-top: 0.4rem;
+}
+
+.card-side-label {
+    font-size: 1rem;
+    font-weight: 700;
+}
